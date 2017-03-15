@@ -204,16 +204,16 @@
 
 #pragma mark - <UICollectionViewDelegate,UICollectionViewDataSource>
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if ([self.delegate respondsToSelector:@selector(collectionView:cellForItemAtIndexPath:)]) {
-        return [self.delegate collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionView:cellForItemAtIndexPath:)]) {
+        return [self.delegate iqCollectionView:collectionView cellForItemAtIndexPath:indexPath];
     }
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell_IQEngBaseCell" forIndexPath:indexPath];
     return cell;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if ([self.delegate respondsToSelector:@selector(collectionView:numberOfItemsInSection:)]) {
-        return [self.delegate collectionView:collectionView numberOfItemsInSection:section];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionView:numberOfItemsInSection:)]) {
+        return [self.delegate iqCollectionView:collectionView numberOfItemsInSection:section];
     }
     
     return 0;
@@ -225,8 +225,8 @@
             return;
         }
     }
-    if ([self.delegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
-        [self.delegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionView:didSelectItemAtIndexPath:)]) {
+        [self.delegate iqCollectionView:collectionView didSelectItemAtIndexPath:indexPath];
     }
     if (self.whenClick) {
         self.whenClick(indexPath);
@@ -237,8 +237,8 @@
     return self.allowInfiniteBanner?section:1;
 }
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if ([self.delegate respondsToSelector:@selector(collectionView:layout:sizeForItemAtIndexPath:)]) {
-        return [self.delegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionView:layout:sizeForItemAtIndexPath:)]) {
+        return [self.delegate iqCollectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
     }
     return self.collectionViewLayout.itemSize;
 }
@@ -247,20 +247,20 @@
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [_timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:_timeInterval]];
-    if ([self.delegate respondsToSelector:@selector(collectionViewDidEndScrolling:)]) {
-        [self.delegate collectionViewDidEndScrolling:scrollView];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionViewDidEndScrolling:)]) {
+        [self.delegate iqCollectionViewDidEndScrolling:scrollView];
     }
     [self reloadCurrentPageControl];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if ([self.delegate respondsToSelector:@selector(collectionViewDidEndScrolling:)]) {
-        [self.delegate collectionViewDidEndScrolling:scrollView];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionViewDidEndScrolling:)]) {
+        [self.delegate iqCollectionViewDidEndScrolling:scrollView];
     }
     [self reloadCurrentPageControl];
 }
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    if ([self.delegate respondsToSelector:@selector(collectionViewDidEndScrolling:)]) {
-        [self.delegate collectionViewDidEndScrolling:scrollView];
+    if ([self.delegate respondsToSelector:@selector(iqCollectionViewDidEndScrolling:)]) {
+        [self.delegate iqCollectionViewDidEndScrolling:scrollView];
     }
     [self reloadCurrentPageControl];
 }

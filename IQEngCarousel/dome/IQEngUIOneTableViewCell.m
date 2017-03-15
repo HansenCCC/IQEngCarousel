@@ -34,21 +34,23 @@
     self.carouselView.frame = f1;
 }
 #pragma mark - IQEngCarouselViewDelegate
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+-(UICollectionViewCell *)iqCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     IQEngUICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"IQEngUICollectionViewCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor colorWithRed:rand()%255/255.0 green:rand()%255/255.0 blue:rand()%255/255.0 alpha:1];
     cell.label.text = [NSString stringWithFormat:@"%d",indexPath.row];
     return cell;
 }
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+-(NSInteger)iqCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 10;
 }
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+-(CGSize)iqCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return collectionView.bounds.size;
 }
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+-(void)iqCollectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     UIAlertView *v = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"My name is %d",indexPath.row] message:@"i'm here https://www.zhihu.com/people/EngCCC" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:nil, nil];
     [v show];
 }
+
+
 @end

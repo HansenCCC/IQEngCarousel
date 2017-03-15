@@ -17,8 +17,8 @@ typedef void(^IQEngCarouselClickBlock)(NSIndexPath *indexPath);
 
 @protocol IQEngCarouselViewDelegate <NSObject>//对轮播界面的扩展
 @required
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
+-(UICollectionViewCell *)iqCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+-(NSInteger)iqCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 
 @optional
 /**
@@ -27,7 +27,7 @@ typedef void(^IQEngCarouselClickBlock)(NSIndexPath *indexPath);
  @param collectionView UICollectionView
  @param indexPath      坐标
  */
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+-(void)iqCollectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  优先级高于collectionViewLayout.itemSize
@@ -38,14 +38,14 @@ typedef void(^IQEngCarouselClickBlock)(NSIndexPath *indexPath);
 
  @return size
  */
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+-(CGSize)iqCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  当collectionView 滚动是调用此方法（用于自定义轮播扩展）
 
  @param scrollView <#scrollView description#>
  */
--(void)collectionViewDidEndScrolling:(UIScrollView *)scrollView;
+-(void)iqCollectionViewDidEndScrolling:(UIScrollView *)scrollView;
 
 @end
 
