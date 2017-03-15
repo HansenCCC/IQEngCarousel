@@ -2,6 +2,7 @@ IQEngCarousel
 =========================== 
 轮播图、collectionview、无限滚动、定时滚动、Carousel、Autoscroll Banner. 无限循环图片、轮播器、支持横竖屏
 ****  
+![image](https://raw.githubusercontent.com/HersonIQ/IQEngCarousel/master/images/carousel.gif)
 
 ### 使用方法
 //导入下面四个文件或者libs文件夹到你的工程里面
@@ -129,10 +130,8 @@ typedef void(^IQEngCarouselClickBlock)(NSIndexPath *indexPath);
   |1|`[简书]:http://www.jianshu.com/u/17fadb43646e`|[我的简书](http://www.jianshu.com/u/17fadb43646e)
   |2|`[知乎]:https://www.zhihu.com/people/EngCCC"我的知乎，欢迎关注"` |[我的博客](http://blog.csdn.net/guodongxiaren)   
 
-   ![image] (https://raw.githubusercontent.com/HersonIQ/IQEngCarousel/master/images/carousel.gif)
-   
-   
-   
+
+
 ### 　　　　　　　　　　　Author:力王
 ### 　　　　　　　　 E-mail:13767141841@163.com
 ### 　　　　　　　　Q:2534550460 欢淫讨论学术问题 🙃，找到bug请@我
