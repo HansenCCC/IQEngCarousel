@@ -128,7 +128,7 @@ typedef void(^IQEngCarouselClickBlock)(NSIndexPath *indexPath);
   |#|·|·|
   |---|----|-----
   |1|`[简书]:http://www.jianshu.com/u/17fadb43646e`|[我的简书](http://www.jianshu.com/u/17fadb43646e)
-  |2|`[知乎]:https://www.zhihu.com/people/EngCCC"我的知乎，欢迎关注"` |[我的博客](http://blog.csdn.net/guodongxiaren)   
+  |2|`[知乎]:https://www.zhihu.com/people/EngCCC"我的知乎，欢迎关注"` |[我的知乎](https://www.zhihu.com/people/EngCCC)   
 
 
 
