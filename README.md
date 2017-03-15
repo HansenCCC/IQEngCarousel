@@ -20,16 +20,15 @@ IQEngCarousel
         self.carouselView.delegate = self;
         [self.contentView addSubview:self.carouselView];
 ```
-##### 并完成两个协议
+#### 并完成两个协议
 ```objective-c
   -(UICollectionViewCell *)iqCollectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
   
   -(NSInteger)iqCollectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 ```
-#####最大的扩展在于此，根据上面的协议，你可以自定义你需要风格的轮播效果
+  最大的扩展在于此，根据上面的协议，你可以自定义你需要风格的轮播效果
 
-
-####展示代码
+展示代码
 ```objective-c
 
 #define IQEngCarouselViewNumberOfSections 100 //限制
