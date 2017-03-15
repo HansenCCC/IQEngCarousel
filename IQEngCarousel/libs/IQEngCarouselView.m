@@ -177,7 +177,7 @@
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.collectionViewLayout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell_IQEngBaseCell"];
+//        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell_IQEngBaseCell"];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.prefetchingEnabled = NO;
@@ -204,19 +204,13 @@
 
 #pragma mark - <UICollectionViewDelegate,UICollectionViewDataSource>
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if ([self.delegate respondsToSelector:@selector(iqCollectionView:cellForItemAtIndexPath:)]) {
-        return [self.delegate iqCollectionView:collectionView cellForItemAtIndexPath:indexPath];
-    }
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell_IQEngBaseCell" forIndexPath:indexPath];
-    return cell;
+    return [self.delegate iqCollectionView:collectionView cellForItemAtIndexPath:indexPath];
+//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell_IQEngBaseCell" forIndexPath:indexPath];
+//    return cell;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if ([self.delegate respondsToSelector:@selector(iqCollectionView:numberOfItemsInSection:)]) {
-        return [self.delegate iqCollectionView:collectionView numberOfItemsInSection:section];
-    }
-    
-    return 0;
+    NSInteger row = [self.delegate iqCollectionView:collectionView numberOfItemsInSection:section];
+    return row;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (!self.allEqual) {
