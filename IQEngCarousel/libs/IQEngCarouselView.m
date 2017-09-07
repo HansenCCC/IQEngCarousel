@@ -77,6 +77,9 @@
 //    }];
 //    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
+- (void)dealloc{
+    [self removeTimer];
+}
 // 删除定时器
 -(void)removeTimer{
     [_timer invalidate];
